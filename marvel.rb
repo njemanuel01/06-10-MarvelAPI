@@ -7,8 +7,14 @@ class Marvel
     :private_key => 'b83361c174682e6fc1488982737c9c564002657a')
   end
   
-  def fetch_character(character_name)
-    @client.character(character_name)
+  def fetch_character_name(character_name)
+    hero = @client.character(character_name)
+    hero.data[:results][0][:name]
+  end
+  
+  def fetch_character_description(character_name)
+    hero = @client.character(character_name)
+    hero.data[:results][0][:description]
   end
     
 end
