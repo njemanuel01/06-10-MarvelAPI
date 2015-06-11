@@ -7,7 +7,7 @@ puts "Would you like to build or add to your Marvel Team? (Y/N)"
 answer = gets.chomp
 
 while answer == 'Y'
-  puts "Who would you like to join your Marvel Team?."
+  puts "Who would you like to join your Marvel Team?"
   character_name = gets.chomp
 
   session = Marvel.new(name, character_name)

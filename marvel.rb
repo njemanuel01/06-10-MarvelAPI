@@ -1,4 +1,5 @@
 require "marvelite"
+require_relative "marvel_resource.rb"
 # Gets various information about marvel characters based on the user inputted name.
 class Marvel
   # Creates and instance of client which accesses the Marvel database and creates and instance of the @hero attribute based on the user inputted character name.
@@ -20,7 +21,7 @@ class Marvel
   end
   
   def add_character_info
-    @database.add_info(@hero.data[:results][0][:name],@hero.data[:results][0][:description], @hero.data[:results][0][:comics][:available],
+    @database.add_info(@hero.data[:results][0][:name], @hero.data[:results][0][:description], @hero.data[:results][0][:comics][:available],
     @hero.data[:results][0][:series][:available], @hero.data[:results][0][:stories][:available], @hero.data[:results][0][:events][:available])
   end
 end
