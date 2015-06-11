@@ -11,6 +11,6 @@ class MarvelResource
     name.delete "'"
     description.delete! "'"
     @CONNECTION.execute("INSERT INTO 'heroes' (name, description, comic_total, series_total, stories_total, events_total) VALUES 
-    ('#{name}', '#{description}', #{comic_number}, #{series_number}, #{stories_number}, #{events_number});")
+    (?, ?, ?, ?, ?, ?);", name, description, comic_number, series_number, stories_number, events_number)
   end
 end
