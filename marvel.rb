@@ -20,8 +20,16 @@ class Marvel
     @hero[:code]
   end
   
+  def get_names
+    names_array = @database.get_names
+  end
+  
+  def remove_name(name)
+    @database.remove_name(name)
+  end
+  
   def add_character_info
-    @database.add_info(@hero.data[:results][0][:name], @hero.data[:results][0][:description], @hero.data[:results][0][:comics][:available],
+    MarvelResource.add_info(@hero.data[:results][0][:name], @hero.data[:results][0][:description], @hero.data[:results][0][:comics][:available],
     @hero.data[:results][0][:series][:available], @hero.data[:results][0][:stories][:available], @hero.data[:results][0][:events][:available])
   end
 end
